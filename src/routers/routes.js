@@ -16,22 +16,22 @@ export const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                loader: () => fetch(`http://localhost:5000/news`),
+                loader: () => fetch(`https://dragon-news-server-cyan-zeta.vercel.app/news`),
                 element: <Home />
             },
             {
                 path: '/home',
-                loader: () => fetch(`http://localhost:5000/news`),
+                loader: () => fetch(`https://dragon-news-server-cyan-zeta.vercel.app/news`),
                 element: <Home />
             },
             {
                 path: '/category/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/category/${params.id}`),
+                loader: ({ params }) => fetch(`https://dragon-news-server-cyan-zeta.vercel.app/category/${params.id}`),
                 element: <Category />
             },
             {
                 path: '/news/:id',
-                loader: ({ params }) => fetch(`http://localhost:5000/news/${params.id}`),
+                loader: ({ params }) => fetch(`https://dragon-news-server-cyan-zeta.vercel.app/news/${params.id}`),
                 element: <PrivateRoute><News /></PrivateRoute>
             },
             {

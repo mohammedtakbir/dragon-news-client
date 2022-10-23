@@ -14,16 +14,19 @@ const AuthProvider = ({ children }) => {
 
     //* sign in with google
     const googleSignIn = () => { 
+        setLoading(true);
         return signInWithPopup(auth, googleProvider)
     };
 
     //* create an user
     const createUser = (email, password) => {
+        setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     };
 
     //* logIn an user
     const userLogIn = (email, password) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
 
@@ -42,15 +45,18 @@ const AuthProvider = ({ children }) => {
 
     //* Sign out
     const userSignOut = () => {
+        setLoading(true);
         return signOut(auth)
     };
 
     //* update user profile
     const updateUserProfile = (profile) => {
+        setLoading(true);
         return updateProfile(auth.currentUser, profile)
     };
     //* send a verification email
     const verifyEmail = () => {
+        setLoading(true);
         return sendEmailVerification(auth.currentUser)
     }
 
