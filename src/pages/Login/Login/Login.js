@@ -6,14 +6,15 @@ import Form from 'react-bootstrap/Form';
 import toast from 'react-hot-toast';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthProvider/AuthProvider';
+import { useTitle } from '../../../Hooks/UseTitle';
 
 const Login = () => {
+    useTitle('login');
     const [error, setError] = useState('');
     const { userLogIn, setLoading } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
-
 
     const handleLogIn = (e) => {
         e.preventDefault();
